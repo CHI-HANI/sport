@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QKG21W3XX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QKG21W3XX');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مصحف رمضان</title>
+<meta name="theme-color" content="#080c18">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="مصحف رمضان">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080c18'/><text y='.9em' font-size='80' x='10'>🌙</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+[data-theme="night"] {
+  --bg:#080c18;--bg2:#0d1224;--card:#111827;--card2:#1a2340;
+  --border:rgba(201,168,76,0.2);--gold:#c9a84c;--gold2:#f0d080;
+  --text:#e8dcc8;--text2:#8a7a60;
+  --green:#4ade80;--green-bg:rgba(74,222,128,0.12);
+  --yellow:#fbbf24;--yellow-bg:rgba(251,191,36,0.12);
+  --red:#f87171;--red-bg:rgba(248,113,113,0.1);
+  --purple:#a78bfa;--purple-bg:rgba(167,139,250,0.12);
+  --today-border:rgba(201,168,76,0.6);
+  --header-bg:rgba(8,12,24,0.96);--btn:#1a2340;--btn-hover:#243058;
+  --welcome-bg:radial-gradient(ellipse at 50% 0%,#1a2a4a 0%,#080c18 70%);
+  --dhikr-bg:linear-gradient(135deg,rgba(167,139,250,0.15),rgba(201,168,76,0.08));
+  --dhikr-border:rgba(167,139,250,0.3);
+}
+[data-theme="classic"] {
+  --bg:#f5f0e8;--bg2:#ede8dc;--card:#fff;--card2:#f0ebe0;
+  --border:rgba(34,85,34,0.2);--gold:#1a5c1a;--gold2:#2d8c2d;
+  --text:#1a2a1a;--text2:#5a7a5a;
+  --green:#16a34a;--green-bg:rgba(22,163,74,0.1);
+  --yellow:#ca8a04;--yellow-bg:rgba(202,138,4,0.1);
+  --red:#dc2626;--red-bg:rgba(220,38,38,0.08);
+  --purple:#7c3aed;--purple-bg:rgba(124,58,237,0.08);
+  --today-border:rgba(34,85,34,0.5);
+  --header-bg:rgba(245,240,232,0.97);--btn:#e8ede0;--btn-hover:#d8e0cc;
+  --welcome-bg:radial-gradient(ellipse at 50% 0%,#d4e8d4 0%,#f5f0e8 70%);
+  --dhikr-bg:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(34,85,34,0.05));
+  --dhikr-border:rgba(124,58,237,0.25);
+}
+[data-theme="daylight"] {
+  --bg:#fffbf5;--bg2:#fff6ea;--card:#fff;--card2:#fef3e2;
+  --border:rgba(180,100,20,0.15);--gold:#c2710c;--gold2:#ea8c1e;
+  --text:#2c1810;--text2:#8a6050;
+  --green:#059669;--green-bg:rgba(5,150,105,0.1);
+  --yellow:#d97706;--yellow-bg:rgba(217,119,6,0.1);
+  --red:#e11d48;--red-bg:rgba(225,29,72,0.08);
+  --purple:#7c3aed;--purple-bg:rgba(124,58,237,0.08);
+  --today-border:rgba(194,113,12,0.5);
+  --header-bg:rgba(255,251,245,0.97);--btn:#fef3e2;--btn-hover:#fde8c8;
+  --welcome-bg:radial-gradient(ellipse at 50% 0%,#ffe8c0 0%,#fffbf5 70%);
+  --dhikr-bg:linear-gradient(135deg,rgba(124,58,237,0.07),rgba(194,113,12,0.06));
+  --dhikr-border:rgba(124,58,237,0.2);
+}
+[data-theme="sunset"] {
+  --bg:#12080e;--bg2:#1a0c14;--card:#1f1018;--card2:#2a1520;
+  --border:rgba(251,113,133,0.2);--gold:#fb7185;--gold2:#fda4af;
+  --text:#fce7f0;--text2:#9a7080;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.12);
+  --yellow:#f59e0b;--yellow-bg:rgba(245,158,11,0.12);
+  --red:#f87171;--red-bg:rgba(248,113,113,0.1);
+  --purple:#c084fc;--purple-bg:rgba(192,132,252,0.12);
+  --today-border:rgba(251,113,133,0.6);
+  --header-bg:rgba(18,8,14,0.96);--btn:#2a1520;--btn-hover:#3a2030;
+  --welcome-bg:radial-gradient(ellipse at 50% 0%,#3d1428 0%,#12080e 70%);
+  --dhikr-bg:linear-gradient(135deg,rgba(192,132,252,0.15),rgba(251,113,133,0.08));
+  --dhikr-border:rgba(192,132,252,0.3);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Tajawal',sans-serif;min-height:100vh;transition:background .4s,color .4s;}
+
+/* ===== WELCOME ===== */
+#welcome-screen{position:fixed;inset:0;background:var(--welcome-bg);display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px;overflow-y:auto;}
+.welcome-box{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:36px 28px;width:100%;max-width:420px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.4);animation:fadeUp .6s cubic-bezier(.34,1.56,.64,1);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.welcome-moon{font-size:52px;display:block;animation:float 3s ease-in-out infinite;margin-bottom:6px;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.welcome-title{font-family:'Amiri',serif;font-size:30px;color:var(--gold);margin-bottom:4px;}
+.welcome-sub{font-size:13px;color:var(--text2);margin-bottom:28px;}
+.w-label{display:block;font-size:13px;color:var(--text2);text-align:right;margin-bottom:6px;font-weight:500;}
+.w-input{width:100%;background:var(--card2);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px;color:var(--text);font-size:15px;font-family:'Tajawal',sans-serif;outline:none;margin-bottom:18px;transition:border-color .2s;}
+.w-input:focus{border-color:var(--gold);}
+.w-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;}
+.w-input-half{width:100%;background:var(--card2);border:1.5px solid var(--border);border-radius:12px;padding:11px 14px;color:var(--text);font-size:15px;font-family:'Tajawal',sans-serif;outline:none;transition:border-color .2s;}
+.w-input-half:focus{border-color:var(--gold);}
+.khatma-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+.khatma-opt{background:var(--card2);border:2px solid var(--border);border-radius:12px;padding:10px 6px;cursor:pointer;transition:all .25s;text-align:center;}
+.khatma-opt.selected{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 15%,transparent);}
+.k-num{font-family:'Amiri',serif;font-size:24px;color:var(--gold2);line-height:1;}
+.k-label{font-size:10px;color:var(--text2);margin-top:2px;}
+.khatma-opt.selected .k-label{color:var(--gold);}
+.start-btn{width:100%;padding:15px;background:var(--gold);border:none;border-radius:14px;color:var(--bg);font-size:17px;font-weight:900;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .25s;box-shadow:0 4px 24px color-mix(in srgb,var(--gold) 40%,transparent);margin-top:8px;}
+.start-btn:hover{transform:translateY(-2px);filter:brightness(1.1);}
+
+/* ===== APP ===== */
+#app{display:none;}
+
+/* Header */
+.header{position:sticky;top:0;z-index:100;background:var(--header-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 14px;}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 0 6px;gap:8px;flex-wrap:wrap;}
+.app-brand{display:flex;align-items:center;gap:6px;}
+.brand-name{font-family:'Amiri',serif;font-size:20px;color:var(--gold);}
+.user-greeting{font-size:12px;color:var(--text2);white-space:nowrap;}
+.header-actions{display:flex;gap:6px;align-items:center;}
+.icon-btn{background:var(--btn);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:12px;font-weight:700;font-family:'Tajawal',sans-serif;color:var(--text2);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.icon-btn:hover{background:var(--btn-hover);color:var(--gold);}
+.today-btn{background:var(--gold);color:var(--bg);border:none;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .2s;}
+.today-btn:hover{filter:brightness(1.1);}
+.theme-switcher{display:flex;gap:3px;}
+.theme-btn{width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .2s;font-size:13px;display:flex;align-items:center;justify-content:center;background:transparent;}
+.theme-btn.active{border-color:var(--gold);transform:scale(1.15);}
+
+/* Progress */
+.progress-section{padding:8px 0 10px;}
+.progress-stats{display:flex;justify-content:space-between;margin-bottom:6px;}
+.p-stat{text-align:center;}
+.p-stat .pv{font-size:14px;font-weight:700;color:var(--gold2);}
+.p-stat .pl{font-size:10px;color:var(--text2);}
+.progress-bar-wrap{background:color-mix(in srgb,var(--text2) 15%,transparent);border-radius:100px;height:7px;overflow:hidden;}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:100px;transition:width .6s cubic-bezier(.34,1.56,.64,1);}
+
+/* Dhikr Card */
+.dhikr-card{margin:12px 14px 0;background:var(--dhikr-bg);border:1px solid var(--dhikr-border);border-radius:18px;padding:16px 18px;position:relative;overflow:hidden;}
+.dhikr-card::before{content:'❝';position:absolute;top:-14px;right:12px;font-size:72px;color:color-mix(in srgb,var(--purple) 12%,transparent);font-family:'Amiri',serif;line-height:1;pointer-events:none;}
+.dhikr-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.dhikr-day-label{font-size:11px;color:var(--text2);font-weight:600;}
+.dhikr-nav{display:flex;gap:4px;}
+.dhikr-nav-btn{width:26px;height:26px;border-radius:50%;background:var(--btn);border:1px solid var(--border);color:var(--text2);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.dhikr-nav-btn:hover{background:var(--btn-hover);color:var(--gold);}
+.dhikr-text{font-family:'Amiri',serif;font-size:18px;line-height:1.9;color:var(--text);text-align:center;margin-bottom:8px;}
+.dhikr-fadl{font-size:12px;color:var(--purple);text-align:center;font-weight:600;background:color-mix(in srgb,var(--purple) 10%,transparent);border-radius:20px;padding:4px 14px;display:inline-block;}
+.dhikr-fadl-wrap{text-align:center;}
+
+/* Table */
+.table-wrapper{overflow-x:auto;padding:12px 8px 90px;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:separate;border-spacing:0 3px;min-width:600px;}
+thead th{font-size:11px;font-weight:700;color:var(--text2);padding:6px 8px;text-align:center;border-bottom:1px solid var(--border);white-space:nowrap;}
+tbody tr{background:var(--card);cursor:default;}
+tbody tr td{padding:8px 6px;text-align:center;font-size:13px;border-top:1px solid transparent;border-bottom:1px solid transparent;}
+tbody tr td:first-child{border-radius:12px 0 0 12px;border-right:3px solid transparent;width:50px;}
+tbody tr td:last-child{border-radius:0 12px 12px 0;}
+
+/* Row colors */
+tbody tr.perf-perfect td{background:var(--green-bg);}
+tbody tr.perf-perfect td:first-child{border-right-color:var(--green);}
+tbody tr.perf-good td{background:var(--yellow-bg);}
+tbody tr.perf-good td:first-child{border-right-color:var(--yellow);}
+tbody tr.perf-weak td{background:var(--red-bg);}
+tbody tr.perf-weak td:first-child{border-right-color:var(--red);}
+
+/* Last 10 nights */
+tbody tr.last-ten td{background:var(--purple-bg) !important;}
+tbody tr.last-ten td:first-child{border-right-color:var(--purple) !important;}
+tbody tr.last-ten.perf-perfect td{background:color-mix(in srgb,var(--green-bg) 60%,var(--purple-bg)) !important;}
+tbody tr.last-ten.perf-good td{background:color-mix(in srgb,var(--yellow-bg) 60%,var(--purple-bg)) !important;}
+
+/* Today */
+tbody tr.today-row td{border-top-color:var(--today-border) !important;border-bottom-color:var(--today-border) !important;}
+tbody tr.today-row td:first-child{border-right-color:var(--gold) !important;}
+tbody tr.today-row td:last-child{border-left:1px solid var(--today-border) !important;}
+
+/* Day cell */
+.day-num-cell{display:flex;flex-direction:column;align-items:center;gap:1px;}
+.day-number{font-family:'Amiri',serif;font-size:17px;font-weight:700;color:var(--gold);line-height:1;}
+.day-badge{font-size:8px;background:var(--gold);color:var(--bg);border-radius:5px;padding:1px 5px;font-weight:700;}
+.last-ten-badge{font-size:8px;background:var(--purple);color:#fff;border-radius:5px;padding:1px 5px;font-weight:700;}
+
+/* Prayer two-button cell */
+.prayer-cell{display:flex;flex-direction:column;align-items:center;gap:3px;}
+.prayer-btn{width:30px;height:22px;border-radius:6px;border:1.5px solid var(--border);background:transparent;cursor:pointer;font-size:13px;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;color:var(--text2);line-height:1;}
+.prayer-btn:hover{transform:scale(1.1);}
+.prayer-btn.masjid{background:var(--green-bg);border-color:var(--green);color:var(--green);}
+.prayer-btn.home{background:rgba(96,165,250,0.12);border-color:#60a5fa;color:#60a5fa;}
+
+/* Fullscreen table */
+.table-wrapper.fullscreen{position:fixed;inset:0;z-index:200;background:var(--bg);padding:12px 8px 20px;overflow:auto;}
+.fullscreen-btn{background:var(--btn);border:1px solid var(--border);border-radius:8px;padding:5px 10px;font-size:13px;cursor:pointer;color:var(--text2);transition:all .2s;}
+.fullscreen-btn:hover{color:var(--gold);}
+.fullscreen-exit{position:sticky;top:4px;left:4px;z-index:10;background:var(--gold);color:var(--bg);border:none;border-radius:20px;padding:6px 16px;font-size:13px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;display:none;margin-bottom:8px;}
+.table-wrapper.fullscreen .fullscreen-exit{display:block;}
+
+/* Dhikr counter */
+.dhikr-counter-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;}
+.dhikr-count-btn{width:32px;height:32px;border-radius:50%;background:var(--btn);border:1px solid var(--border);color:var(--text2);font-size:18px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.dhikr-count-btn:hover{background:var(--btn-hover);color:var(--gold);}
+.dhikr-count-val{font-family:'Amiri',serif;font-size:28px;color:var(--gold2);min-width:50px;text-align:center;}
+.dhikr-count-reset{font-size:11px;color:var(--text2);cursor:pointer;text-decoration:underline;margin-top:4px;display:block;text-align:center;}
+.dhikr-share-btn{background:transparent;border:1px solid var(--dhikr-border);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--purple);font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .2s;margin-top:8px;}
+.dhikr-share-btn:hover{background:color-mix(in srgb,var(--purple) 10%,transparent);}
+.dhikr-actions{display:flex;justify-content:center;gap:8px;margin-top:8px;flex-wrap:wrap;}
+
+/* Celebration */
+@keyframes celebrate{0%{transform:scale(1)}30%{transform:scale(1.04)}60%{transform:scale(0.98)}100%{transform:scale(1)}}
+.celebrate{animation:celebrate .5s ease;}
+.confetti-wrap{position:fixed;top:0;left:0;width:100%;pointer-events:none;z-index:999;}
+.confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall 1.5s ease-in forwards;}
+@keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
+
+/* Counter */
+.counter-cell{display:flex;align-items:center;justify-content:center;gap:3px;}
+.cnt-btn{width:22px;height:22px;border-radius:6px;border:1px solid var(--border);background:var(--btn);color:var(--text2);font-size:13px;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cnt-btn:hover{background:var(--btn-hover);color:var(--gold);}
+.cnt-val{font-size:13px;font-weight:700;color:var(--text);min-width:26px;text-align:center;}
+.hizb-done{color:var(--green) !important;}
+.hizb-over{color:var(--yellow) !important;}
+
+/* Summary row */
+tfoot tr td{background:color-mix(in srgb,var(--gold) 8%,transparent) !important;border-top:2px solid var(--gold) !important;font-weight:700;font-size:12px;color:var(--gold2);padding:10px 6px;}
+tfoot tr td:first-child{border-radius:12px 0 0 12px;border-right-color:var(--gold) !important;}
+tfoot tr td:last-child{border-radius:0 12px 12px 0;}
+
+/* Toast */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(20,20,30,0.95);color:white;padding:11px 22px;border-radius:100px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;z-index:500;white-space:nowrap;border:1px solid rgba(255,255,255,0.1);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast.success{background:rgba(22,163,74,0.95);}
+.toast.warn{background:rgba(220,38,38,0.95);}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:600;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .2s;}
+.modal-overlay.show{opacity:1;pointer-events:all;}
+.modal-box{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;max-width:340px;width:100%;text-align:center;transform:scale(0.9);transition:transform .25s;}
+.modal-overlay.show .modal-box{transform:scale(1);}
+.modal-icon{font-size:36px;margin-bottom:10px;}
+.modal-title{font-size:17px;font-weight:700;margin-bottom:7px;}
+.modal-text{font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.6;}
+.modal-btns{display:flex;gap:8px;}
+.modal-btn{flex:1;padding:11px;border-radius:10px;border:none;font-size:14px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .2s;}
+.modal-btn.confirm{background:var(--gold);color:var(--bg);}
+.modal-btn.cancel{background:var(--card2);color:var(--text2);border:1px solid var(--border);}
+.modal-btn:hover{filter:brightness(1.1);}
+
+/* Settings modal */
+.settings-box{max-width:380px;}
+.settings-title{font-family:'Amiri',serif;font-size:22px;color:var(--gold);margin-bottom:20px;text-align:center;}
+.s-label{display:block;font-size:12px;color:var(--text2);text-align:right;margin-bottom:5px;font-weight:600;}
+.s-input{width:100%;background:var(--card2);border:1.5px solid var(--border);border-radius:10px;padding:10px 13px;color:var(--text);font-size:14px;font-family:'Tajawal',sans-serif;outline:none;margin-bottom:14px;transition:border-color .2s;}
+.s-input:focus{border-color:var(--gold);}
+.s-khatma{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px;}
+.s-kopt{background:var(--card2);border:1.5px solid var(--border);border-radius:9px;padding:8px 4px;cursor:pointer;text-align:center;transition:all .2s;font-size:12px;color:var(--text2);}
+.s-kopt.selected{border-color:var(--gold);color:var(--gold);background:color-mix(in srgb,var(--gold) 12%,transparent);}
+.save-settings-btn{width:100%;padding:13px;background:var(--gold);border:none;border-radius:11px;color:var(--bg);font-size:15px;font-weight:900;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .2s;margin-top:4px;}
+.save-settings-btn:hover{filter:brightness(1.1);}
+
+/* Tutorial */
+.tutorial-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:800;display:flex;align-items:center;justify-content:center;padding:20px;}
+.tutorial-box{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:28px 24px;max-width:380px;width:100%;max-height:90vh;overflow-y:auto;animation:fadeUp .4s cubic-bezier(.34,1.56,.64,1);}
+.tutorial-header{text-align:center;margin-bottom:20px;}
+.tutorial-header .t-icon{font-size:44px;display:block;margin-bottom:8px;}
+.tutorial-header .t-title{font-family:'Amiri',serif;font-size:24px;color:var(--gold);}
+.tutorial-header .t-sub{font-size:13px;color:var(--text2);margin-top:4px;}
+.tutorial-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;padding:12px;background:var(--card2);border-radius:12px;border:1px solid var(--border);}
+.t-step-icon{font-size:26px;flex-shrink:0;margin-top:2px;}
+.t-step-body .t-step-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.t-step-body .t-step-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+.t-step-body .t-step-desc span{color:var(--gold);font-weight:700;}
+.tutorial-colors{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+.t-color{font-size:11px;padding:3px 8px;border-radius:10px;font-weight:600;}
+.t-green{background:var(--green-bg);color:var(--green);}
+.t-yellow{background:var(--yellow-bg);color:var(--yellow);}
+.t-red{background:var(--red-bg);color:var(--red);}
+.t-purple{background:var(--purple-bg);color:var(--purple);}
+.tutorial-start-btn{width:100%;padding:14px;background:var(--gold);border:none;border-radius:12px;color:var(--bg);font-size:16px;font-weight:900;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .25s;margin-top:8px;box-shadow:0 4px 20px color-mix(in srgb,var(--gold) 30%,transparent);}
+.tutorial-start-btn:hover{filter:brightness(1.1);transform:translateY(-1px);}
+.tutorial-skip{display:block;text-align:center;font-size:12px;color:var(--text2);margin-top:10px;cursor:pointer;text-decoration:underline;}
+.tutorial-skip:hover{color:var(--gold);}
+
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--gold) 30%,transparent);border-radius:2px;}
+
+/* Install PWA button */
+.install-btn{width:100%;padding:13px;background:transparent;border:2px dashed var(--border);border-radius:14px;color:var(--text2);font-size:15px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;transition:all .25s;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.install-btn:hover{border-color:var(--gold);color:var(--gold);background:color-mix(in srgb,var(--gold) 5%,transparent);}
+.install-btn.hidden{display:none;}
+.install-note{font-size:11px;color:var(--text2);text-align:center;margin-top:6px;line-height:1.5;padding:0 4px;}
+.install-note.hidden{display:none;}
+</style>
+</head>
+<body data-theme="night">
+
+<!-- WELCOME -->
+<div id="welcome-screen">
+  <div class="welcome-box">
+    <span class="welcome-moon">🌙</span>
+    <div class="welcome-title">مصحف رمضان</div>
+    <div class="welcome-sub">تتبّع عبادتك طوال الشهر الكريم</div>
+    <label class="w-label">اسمك</label>
+    <input class="w-input" id="w-name" type="text" placeholder="أدخل اسمك...">
+    <label class="w-label">تاريخ بداية رمضان</label>
+    <div class="w-row">
+      <input class="w-input-half" id="w-month" type="number" placeholder="الشهر (1-12)" min="1" max="12" value="2">
+      <input class="w-input-half" id="w-day-start" type="number" placeholder="اليوم" min="1" max="31" value="19">
+    </div>
+    <label class="w-label">عدد الختمات المستهدفة</label>
+    <div class="khatma-options">
+      <div class="khatma-opt" onclick="selectKhatma(0.5,this)"><div class="k-num">½</div><div class="k-label">نصف ختمة</div><div class="k-label">1 حزب/يوم</div></div>
+      <div class="khatma-opt selected" onclick="selectKhatma(1,this)"><div class="k-num">1</div><div class="k-label">ختمة كاملة</div><div class="k-label">2 حزب/يوم</div></div>
+      <div class="khatma-opt" onclick="selectKhatma(2,this)"><div class="k-num">2</div><div class="k-label">ختمتان</div><div class="k-label">4 أحزاب/يوم</div></div>
+    </div>
+    <div class="khatma-options">
+      <div class="khatma-opt" onclick="selectKhatma(3,this)"><div class="k-num">3</div><div class="k-label">3 ختمات</div><div class="k-label">6 أحزاب/يوم</div></div>
+      <div class="khatma-opt" onclick="selectKhatma(4,this)"><div class="k-num">4</div><div class="k-label">4 ختمات</div><div class="k-label">8 أحزاب/يوم</div></div>
+      <div class="khatma-opt" onclick="selectKhatma(5,this)"><div class="k-num">5</div><div class="k-label">5 ختمات</div><div class="k-label">10 أحزاب/يوم</div></div>
+    </div>
+    <button class="start-btn" onclick="startApp()">ابدأ رمضانك 🌙</button>
+    <button class="install-btn hidden" id="install-btn-welcome" onclick="installApp()">📲 أضف للشاشة الرئيسية</button>
+    <p class="install-note hidden" id="install-note-welcome"></p>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <div class="header">
+    <div class="header-top">
+      <div class="app-brand">
+        <span>🌙</span>
+        <span class="brand-name">مصحف رمضان</span>
+      </div>
+      <span class="user-greeting" id="greeting"></span>
+      <div class="header-actions">
+        <button class="today-btn" onclick="scrollToToday()">📍 اليوم</button>
+        <button class="icon-btn" onclick="toggleFullscreen()">⛶</button>
+        <button class="icon-btn" onclick="showTutorial()">❓</button>
+        <button class="icon-btn" onclick="openSettings()">⚙️</button>
+        <button class="icon-btn" onclick="exportCard()">📤 تصدير</button>
+        <div class="theme-switcher">
+          <button class="theme-btn active" onclick="setTheme('night',this)">🌙</button>
+          <button class="theme-btn" onclick="setTheme('classic',this)">🕌</button>
+          <button class="theme-btn" onclick="setTheme('daylight',this)">☀️</button>
+          <button class="theme-btn" onclick="setTheme('sunset',this)">🌅</button>
+        </div>
+      </div>
+    </div>
+    <div class="progress-section">
+      <div class="progress-stats">
+        <div class="p-stat"><div class="pv" id="prog-prayers">٠/١٥٠</div><div class="pl">صلوات المسجد</div></div>
+        <div class="p-stat"><div class="pv" id="prog-tarawih">٠</div><div class="pl">ركعات التراويح</div></div>
+        <div class="p-stat"><div class="pv" id="prog-hizb">٠/٦٠</div><div class="pl">أحزاب القرآن</div></div>
+        <div class="p-stat"><div class="pv" id="prog-pct">٠٪</div><div class="pl">الإنجاز</div></div>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="main-progress" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- Dhikr Card -->
+  <div class="dhikr-card" id="dhikr-card">
+    <div class="dhikr-top">
+      <span class="dhikr-day-label" id="dhikr-day-label">ذكر اليوم ١</span>
+      <div class="dhikr-nav">
+        <button class="dhikr-nav-btn" onclick="prevDhikr()">›</button>
+        <button class="dhikr-nav-btn" onclick="nextDhikr()">‹</button>
+      </div>
+    </div>
+    <div class="dhikr-text" id="dhikr-text"></div>
+    <div class="dhikr-fadl-wrap"><span class="dhikr-fadl" id="dhikr-fadl"></span></div>
+    <div class="dhikr-counter-wrap">
+      <button class="dhikr-count-btn" onclick="changeDhikrCount(-1)">−</button>
+      <span class="dhikr-count-val" id="dhikr-count">0</span>
+      <button class="dhikr-count-btn" onclick="changeDhikrCount(1)">+</button>
+    </div>
+    <span class="dhikr-count-reset" onclick="resetDhikrCount()">إعادة تعيين العداد</span>
+    <div class="dhikr-actions">
+      <button class="dhikr-share-btn" onclick="shareDhikr()">📤 مشاركة الذكر</button>
+      <button class="dhikr-share-btn" onclick="copyDhikr()">📋 نسخ</button>
+    </div>
+  </div>
+
+  <div class="table-wrapper" id="table-wrapper">
+    <button class="fullscreen-exit" onclick="toggleFullscreen()">✕ خروج من ملء الشاشة</button>
+    <table id="main-table">
+      <thead>
+        <tr>
+          <th>اليوم</th>
+          <th>🌅<br><small>الفجر</small></th>
+          <th>☀️<br><small>الظهر</small></th>
+          <th>🌤<br><small>العصر</small></th>
+          <th>🌆<br><small>المغرب</small></th>
+          <th>🌃<br><small>العشاء</small></th>
+          <th>🕌 التراويح</th>
+          <th>📖 الأحزاب</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+      <tfoot id="table-foot"></tfoot>
+    </table>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Confirm Modal -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal-box">
+    <div class="modal-icon">✏️</div>
+    <div class="modal-title">تعديل يوم ماضٍ</div>
+    <div class="modal-text" id="confirm-text"></div>
+    <div class="modal-btns">
+      <button class="modal-btn cancel" onclick="closeConfirm(false)">إلغاء</button>
+      <button class="modal-btn confirm" onclick="closeConfirm(true)">تأكيد</button>
+    </div>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settings-modal">
+  <div class="modal-box settings-box">
+    <div class="settings-title">⚙️ الإعدادات</div>
+    <label class="s-label">اسمك</label>
+    <input class="s-input" id="s-name" type="text">
+    <label class="s-label">تاريخ بداية رمضان</label>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
+      <input class="s-input" id="s-month" type="number" placeholder="الشهر" min="1" max="12" style="margin-bottom:0">
+      <input class="s-input" id="s-day-start" type="number" placeholder="اليوم" min="1" max="31" style="margin-bottom:0">
+    </div>
+    <label class="s-label">عدد الختمات</label>
+    <div class="s-khatma" id="s-khatma-grid"></div>
+
+    <div style="border-top:1px solid var(--border);margin:16px 0 14px;"></div>
+    <label class="s-label">🔔 تذكير يومي لتسجيل العبادة</label>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+      <input class="s-input" id="s-notif-time" type="time" value="21:00" style="margin-bottom:0;flex:1;">
+      <button id="s-notif-btn" onclick="toggleNotification()" style="white-space:nowrap;padding:10px 14px;background:var(--btn);border:1.5px solid var(--border);border-radius:10px;color:var(--text2);font-size:13px;font-family:'Tajawal',sans-serif;font-weight:700;cursor:pointer;transition:all .2s;">تفعيل 🔔</button>
+    </div>
+    <div id="notif-status" style="font-size:12px;color:var(--text2);margin-bottom:14px;min-height:16px;"></div>
+    <div class="modal-btns">
+      <button class="modal-btn cancel" onclick="closeSettings(false)">إلغاء</button>
+      <button class="save-settings-btn" onclick="closeSettings(true)">حفظ التغييرات</button>
+    </div>
+    <button class="install-btn hidden" id="install-btn-settings" onclick="installApp()" style="margin-top:14px">📲 أضف للشاشة الرئيسية</button>
+    <p class="install-note hidden" id="install-note-settings" style="margin-top:6px"></p>
+  </div>
+</div>
+
+<!-- Hidden canvas for export -->
+<canvas id="export-canvas"></canvas>
+
+<!-- TUTORIAL -->
+<div class="tutorial-overlay" id="tutorial-overlay" style="display:none;">
+  <div class="tutorial-box">
+    <div class="tutorial-header">
+      <span class="t-icon">🌙</span>
+      <div class="t-title">كيف تستخدم التطبيق</div>
+      <div class="t-sub">دليل سريع في دقيقة واحدة</div>
+    </div>
+
+    <div class="tutorial-step">
+      <span class="t-step-icon">🕌</span>
+      <div class="t-step-body">
+        <div class="t-step-title">تسجيل الصلوات</div>
+        <div class="t-step-desc">
+          لكل صلاة زران:<br>
+          <span>🕌</span> إذا صليتها في <span>المسجد</span><br>
+          <span>🏠</span> إذا صليتها في <span>البيت</span><br>
+          اضغط مرة ثانية لإلغاء التسجيل
+        </div>
+      </div>
+    </div>
+
+    <div class="tutorial-step">
+      <span class="t-step-icon">🕌</span>
+      <div class="t-step-body">
+        <div class="t-step-title">التراويح والأحزاب</div>
+        <div class="t-step-desc">
+          اضغط <span>+</span> أو <span>−</span> لتغيير العدد<br>
+          الأحزاب تزيد بـ <span>نصف حزب</span> في كل ضغطة<br>
+          عندما تكمل هدفك اليومي يتحول اللون <span>أخضر ✅</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tutorial-step">
+      <span class="t-step-icon">🎨</span>
+      <div class="t-step-body">
+        <div class="t-step-title">ألوان الأداء اليومي</div>
+        <div class="t-step-desc">كل صف يتلون تلقائياً حسب أدائك:</div>
+        <div class="tutorial-colors">
+          <span class="t-color t-green">🟢 يوم مثالي</span>
+          <span class="t-color t-yellow">🟡 يوم جيد</span>
+          <span class="t-color t-red">🔴 يوم ضعيف</span>
+          <span class="t-color t-purple">✨ العشر الأواخر</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tutorial-step">
+      <span class="t-step-icon">📿</span>
+      <div class="t-step-body">
+        <div class="t-step-title">الذكر اليومي</div>
+        <div class="t-step-desc">
+          كل يوم ذكر مختلف مع فضله<br>
+          استخدم <span>العداد</span> لحساب عدد مرات الترديد<br>
+          يمكنك <span>مشاركة الذكر</span> مع أهلك وأصدقائك
+        </div>
+      </div>
+    </div>
+
+    <div class="tutorial-step">
+      <span class="t-step-icon">⚙️</span>
+      <div class="t-step-body">
+        <div class="t-step-title">الإعدادات والإشعارات</div>
+        <div class="t-step-desc">
+          من زر <span>⚙️</span> يمكنك تغيير اسمك وهدف الختمات<br>
+          فعّل <span>التذكير اليومي 🔔</span> واختر الوقت المناسب<br>
+          التطبيق سيذكّرك كل يوم لتسجيل عبادتك
+        </div>
+      </div>
+    </div>
+
+    <div class="tutorial-step">
+      <span class="t-step-icon">📤</span>
+      <div class="t-step-body">
+        <div class="t-step-title">تصدير الإنجاز</div>
+        <div class="t-step-desc">
+          في نهاية رمضان اضغط <span>📤 تصدير</span><br>
+          ستحصل على بطاقة إنجاز جميلة<br>
+          شاركها مع عائلتك وأصدقائك 🌙
+        </div>
+      </div>
+    </div>
+
+    <button class="tutorial-start-btn" onclick="closeTutorial()">فهمت، ابدأ التتبع 🚀</button>
+    <span class="tutorial-skip" onclick="closeTutorial()">تخطي</span>
+  </div>
+</div>
+
+<script>
+// ===== DHIKR DATA =====
+const ADHKAR = [
+  { text: "سُبْحَانَ اللهِ وَبِحَمْدِهِ، سُبْحَانَ اللهِ الْعَظِيمِ", fadl: "كلمتان خفيفتان على اللسان، ثقيلتان في الميزان، حبيبتان إلى الرحمن" },
+  { text: "لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ", fadl: "من قالها ١٠٠ مرة كانت عدل عتق ١٠ رقاب وكُتب له ١٠٠ حسنة" },
+  { text: "سُبْحَانَ اللهِ عَدَدَ مَا خَلَقَ، سُبْحَانَ اللهِ مِلْءَ مَا خَلَقَ، سُبْحَانَ اللهِ عَدَدَ مَا فِي السَّمَاوَاتِ وَالأَرْضِ", fadl: "من أعظم التسبيحات وأثقلها في الميزان" },
+  { text: "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي", fadl: "أفضل دعاء في العشر الأواخر، تغفر به الذنوب وإن كانت كالجبال" },
+  { text: "أَسْتَغْفِرُ اللهَ وَأَتُوبُ إِلَيْهِ", fadl: "من استغفر الله فتح الله له باب التوبة ومحا عنه السيئات" },
+  { text: "اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ", fadl: "دعاء علّمه النبي ﷺ لمعاذ بن جبل، يُعين على المداومة على الطاعات" },
+  { text: "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ", fadl: "كنز من كنوز الجنة، تُحَطّ بها السيئات وتُرفع بها الدرجات" },
+  { text: "سُبْحَانَ اللهِ وَالْحَمْدُ لِلهِ وَلَا إِلَهَ إِلَّا اللهُ وَاللهُ أَكْبَرُ", fadl: "أحب الكلام إلى الله، وهي أفضل من الدنيا وما فيها" },
+  { text: "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَعَافِنِي وَارْزُقْنِي", fadl: "جمعت خيري الدنيا والآخرة في كلمات قليلة" },
+  { text: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ", fadl: "من أجمع الأدعية القرآنية وأكثرها شمولاً" },
+  { text: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ", fadl: "من سألها الله ثلاث مرات سألت الجنةُ الله أن يُدخله إياها" },
+  { text: "حَسْبِيَ اللهُ لَا إِلَهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ", fadl: "من قالها ٧ مرات صباحاً ومساءً كفاه الله ما أهمه" },
+  { text: "اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ", fadl: "الصلاة على النبي ﷺ تُضاعف الحسنات عشرة أضعاف" },
+  { text: "بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ", fadl: "من قالها ثلاثاً صباحاً ومساءً لم يضره شيء" },
+  { text: "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ", fadl: "دعاء عظيم ينشّط القلب ويُفرّج الكرب بإذن الله" },
+  { text: "أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ", fadl: "من قالها ثلاثاً مساءً لم يضره حديد ولا نار" },
+  { text: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَالْعَجْزِ وَالْكَسَلِ", fadl: "دعاء النبي ﷺ لدفع الهم والقلق والكسل" },
+  { text: "رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي", fadl: "دعاء موسى عليه السلام، يُشرح به الصدر ويُيسّر به الأمر" },
+  { text: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ", fadl: "كفارة المجلس، تُمحى بها السيئات التي وقعت فيه" },
+  { text: "اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي وَأَصْلِحْ لِي دُنْيَايَ وَآخِرَتِي", fadl: "دعاء جامع لصلاح الدين والدنيا والآخرة" },
+  { text: "رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا", fadl: "قال الله عند نزولها: قد فعلت. مغفرة مضمونة بإذن الله" },
+  { text: "اللَّهُمَّ تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ", fadl: "دعاء إبراهيم وإسماعيل عليهما السلام بعد بناء الكعبة" },
+  { text: "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَى وَالِدَيَّ", fadl: "دعاء الشكر وبرّ الوالدين، يجمع خيري الدنيا والآخرة" },
+  { text: "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ", fadl: "دعاء يونس عليه السلام في بطن الحوت، ما دعا به مكروب إلا فُرِّج عنه" },
+  { text: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَاماً", fadl: "دعاء عباد الرحمن، ينال به الإنسان الإمامة في الخير" },
+  { text: "اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ", fadl: "من تاب تاب الله عليه، وإن تكررت الذنوب تكررت التوبة" },
+  { text: "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْراً وَثَبِّتْ أَقْدَامَنَا وَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ", fadl: "دعاء أهل البدر، ينال به الثبات والنصر" },
+  { text: "حَسْبُنَا اللهُ وَنِعْمَ الْوَكِيلُ", fadl: "قالها إبراهيم عليه السلام حين أُلقي في النار فكانت برداً وسلاماً" },
+  { text: "اللَّهُمَّ اغْفِرْ لِي مَا قَدَّمْتُ وَمَا أَخَّرْتُ وَمَا أَسْرَرْتُ وَمَا أَعْلَنْتُ", fadl: "يستوعب المغفرة لجميع الذنوب الماضية والحاضرة والخفية والظاهرة" },
+  { text: "رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ", fadl: "دعاء موسى عليه السلام في حاجته، فتح الله له به أبواب الخير" },
+];
+
+// ===== STATE =====
+const STORAGE = 'ramadan_v3';
+let state = { name:'', khatma:1, ramadanMonth:3, ramadanStartDay:1, days:{}, theme:'night' };
+
+const toAr = n => String(n===undefined||n===null?0:n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[+d]);
+const PRAYERS = ['fajr','dhuhr','asr','maghrib','isha'];
+
+// ===== CURRENT RAMADAN DAY =====
+function getCurrentRamadanDay() {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), state.ramadanMonth - 1, state.ramadanStartDay);
+  const diff = Math.floor((now - start) / 86400000) + 1;
+  return Math.max(1, Math.min(30, diff));
+}
+
+// ===== WELCOME =====
+let selectedKhatma = 1;
+function selectKhatma(v, el) {
+  selectedKhatma = v;
+  document.querySelectorAll('.khatma-opt').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function startApp() {
+  state.name = document.getElementById('w-name').value.trim() || 'الصائم';
+  state.khatma = selectedKhatma;
+  state.ramadanMonth = parseInt(document.getElementById('w-month').value) || 2;
+  state.ramadanStartDay = parseInt(document.getElementById('w-day-start').value) || 19;
+  saveState();
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  buildApp();
+  setTimeout(showTutorial, 500);
+}
+
+// ===== LOAD/SAVE =====
+function loadState() {
+  const s = localStorage.getItem(STORAGE);
+  if (s) { state = { ...state, ...JSON.parse(s) }; return true; }
+  return false;
+}
+function saveState() { localStorage.setItem(STORAGE, JSON.stringify(state)); }
+function getDay(d) {
+  if (!state.days[d]) state.days[d] = { prayers:{fajr:0,dhuhr:0,asr:0,maghrib:0,isha:0}, tarawih:0, hizb:0 };
+  // migrate old boolean format
+  const dd = state.days[d];
+  PRAYERS.forEach(p => { if (typeof dd.prayers[p] === 'boolean') dd.prayers[p] = dd.prayers[p] ? 2 : 0; });
+  return dd;
+}
+
+// ===== BUILD =====
+let currentRamadanDay = 1;
+function buildApp() {
+  currentRamadanDay = getCurrentRamadanDay();
+  document.getElementById('greeting').textContent = `أهلاً ${state.name} 🤲`;
+  buildTable();
+  updateProgress();
+  showDhikr(currentRamadanDay - 1);
+  setTimeout(scrollToToday, 300);
+}
+
+// ===== DHIKR =====
+let dhikrIndex = 0;
+function showDhikr(idx) {
+  dhikrIndex = ((idx % 30) + 30) % 30;
+  const d = ADHKAR[dhikrIndex];
+  document.getElementById('dhikr-day-label').textContent = `ذكر اليوم ${dhikrIndex + 1}`;
+  document.getElementById('dhikr-text').textContent = d.text;
+  document.getElementById('dhikr-fadl').textContent = '✨ ' + d.fadl;
+}
+function nextDhikr() { showDhikr(dhikrIndex + 1); }
+function prevDhikr() { showDhikr(dhikrIndex - 1); }
+
+// ===== TABLE =====
+function buildTable() {
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+  for (let d = 1; d <= 30; d++) {
+    const tr = document.createElement('tr');
+    tr.id = `row-${d}`;
+    const dd = getDay(d);
+    const isToday = d === currentRamadanDay;
+    const isLastTen = d >= 21;
+    if (isToday) tr.classList.add('today-row');
+    if (isLastTen) tr.classList.add('last-ten');
+
+    // Day cell
+    const tdDay = document.createElement('td');
+    tdDay.innerHTML = `<div class="day-num-cell">
+      <span class="day-number">${d}</span>
+      ${isToday ? '<span class="day-badge">اليوم</span>' : ''}
+      ${isLastTen && !isToday ? '<span class="last-ten-badge">✨</span>' : ''}
+    </div>`;
+    tr.appendChild(tdDay);
+
+    // Prayers - two buttons: masjid or home
+    PRAYERS.forEach(p => {
+      const td = document.createElement('td');
+      const val = dd.prayers[p]; // 0=لا, 1=بيت, 2=مسجد
+      td.innerHTML = `<div class="prayer-cell">
+        <button class="prayer-btn ${val===2?'masjid':''}" id="pray-masjid-${d}-${p}" onclick="togglePrayer(${d},'${p}',2)" title="في المسجد">🕌</button>
+        <button class="prayer-btn ${val===1?'home':''}" id="pray-home-${d}-${p}" onclick="togglePrayer(${d},'${p}',1)" title="في البيت">🏠</button>
+      </div>`;
+      tr.appendChild(td);
+    });
+
+    // Tarawih
+    const tdT = document.createElement('td');
+    tdT.innerHTML = `<div class="counter-cell">
+      <button class="cnt-btn" onclick="changeTarawih(${d},-1)">−</button>
+      <span class="cnt-val" id="tara-${d}">${dd.tarawih}</span>
+      <button class="cnt-btn" onclick="changeTarawih(${d},1)">+</button>
+    </div>`;
+    tr.appendChild(tdT);
+
+    // Hizb
+    const dailyHizb = state.khatma * 2;
+    const hClass = dd.hizb >= dailyHizb ? (dd.hizb > dailyHizb ? 'hizb-over' : 'hizb-done') : '';
+    const tdH = document.createElement('td');
+    tdH.innerHTML = `<div class="counter-cell">
+      <button class="cnt-btn" onclick="changeHizb(${d},-0.5)">−</button>
+      <span class="cnt-val ${hClass}" id="hizb-${d}">${dd.hizb % 1 === 0 ? dd.hizb : dd.hizb.toFixed(1)}</span>
+      <button class="cnt-btn" onclick="changeHizb(${d},0.5)">+</button>
+    </div>`;
+    tr.appendChild(tdH);
+    tbody.appendChild(tr);
+    applyRowPerf(d);
+  }
+  buildSummary();
+}
+
+function applyRowPerf(d) {
+  if (d > currentRamadanDay) return;
+  const tr = document.getElementById(`row-${d}`);
+  if (!tr) return;
+  const dd = getDay(d);
+  // masjid=2pts, home=1pt per prayer
+  const pc = PRAYERS.reduce((s,p) => s + (dd.prayers[p] === 2 ? 2 : dd.prayers[p] === 1 ? 1 : 0), 0);
+  const dailyHizb = state.khatma * 2;
+  const score = pc + (dd.hizb >= dailyHizb ? 2 : 0) + (dd.tarawih >= 8 ? 1 : 0);
+  tr.classList.remove('perf-perfect','perf-good','perf-weak');
+  if (score >= 12) tr.classList.add('perf-perfect');
+  else if (score >= 6) tr.classList.add('perf-good');
+  else if (score > 0) tr.classList.add('perf-weak');
+  // Celebration if perfect day
+  if (score >= 12) celebrateDay(d);
+}
+
+// ===== SUMMARY =====
+function buildSummary() {
+  const tfoot = document.getElementById('table-foot');
+  tfoot.innerHTML = `<tr id="sum-row">
+    <td>المجموع</td>
+    ${PRAYERS.map(p=>`<td id="sum-${p}">٠</td>`).join('')}
+    <td id="sum-tarawih">٠</td>
+    <td id="sum-hizb">٠</td>
+  </tr>`;
+  updateSummary();
+}
+function updateSummary() {
+  const t = {fajr:0,dhuhr:0,asr:0,maghrib:0,isha:0,tarawih:0,hizb:0};
+  for (let d=1;d<=30;d++) {
+    const dd=getDay(d);
+    PRAYERS.forEach(p=>{if(dd.prayers[p]>0)t[p]++;});
+    t.tarawih+=dd.tarawih; t.hizb+=dd.hizb;
+  }
+  PRAYERS.forEach(p=>{ const el=document.getElementById(`sum-${p}`); if(el) el.textContent=t[p]; });
+  const st=document.getElementById('sum-tarawih'); if(st) st.textContent=t.tarawih;
+  const sh=document.getElementById('sum-hizb'); if(sh) sh.textContent=t.hizb%1===0?t.hizb:t.hizb.toFixed(1);
+}
+
+// ===== INTERACTIONS =====
+let confirmCb = null;
+function askConfirm(msg, cb) {
+  confirmCb = cb;
+  document.getElementById('confirm-text').textContent = `أنت تعدّل ${msg}. هل تريد المتابعة؟`;
+  document.getElementById('confirm-modal').classList.add('show');
+}
+function closeConfirm(ok) {
+  document.getElementById('confirm-modal').classList.remove('show');
+  if (ok && confirmCb) confirmCb();
+  confirmCb = null;
+}
+
+function togglePrayer(day, prayer, type) {
+  const doIt = () => {
+    const dd = getDay(day);
+    // type=2 masjid, type=1 home. Toggle: if already this type -> 0, else set type
+    dd.prayers[prayer] = dd.prayers[prayer] === type ? 0 : type;
+    // update both buttons
+    const mb = document.getElementById(`pray-masjid-${day}-${prayer}`);
+    const hb = document.getElementById(`pray-home-${day}-${prayer}`);
+    if (mb) mb.classList.toggle('masjid', dd.prayers[prayer] === 2);
+    if (hb) hb.classList.toggle('home', dd.prayers[prayer] === 1);
+    saveState(); updateProgress(); applyRowPerf(day); updateSummary();
+    const msgs = ['📝 تم إلغاء الصلاة', '✅ تم تسجيل الصلاة في البيت', '🕌 تم تسجيل الصلاة في المسجد'];
+    showToast(msgs[dd.prayers[prayer]], 'success');
+  };
+  if (day < currentRamadanDay) askConfirm(`صلاة يوم ${day}`, doIt);
+  else doIt();
+}
+
+function changeTarawih(day, delta) {
+  const doIt = () => {
+    const dd = getDay(day);
+    dd.tarawih = Math.max(0, dd.tarawih + delta);
+    const el = document.getElementById(`tara-${day}`);
+    if (el) el.textContent = dd.tarawih;
+    saveState(); updateProgress(); applyRowPerf(day); updateSummary();
+  };
+  if (day < currentRamadanDay) askConfirm(`تراويح يوم ${day}`, doIt);
+  else doIt();
+}
+
+function changeHizb(day, delta) {
+  const doIt = () => {
+    const dd = getDay(day);
+    dd.hizb = Math.max(0, Math.round((dd.hizb + delta) * 2) / 2);
+    const dailyHizb = state.khatma * 2;
+    const el = document.getElementById(`hizb-${day}`);
+    if (el) {
+      el.className = `cnt-val ${dd.hizb >= dailyHizb ? (dd.hizb > dailyHizb ? 'hizb-over' : 'hizb-done') : ''}`;
+      el.textContent = dd.hizb % 1 === 0 ? dd.hizb : dd.hizb.toFixed(1);
+    }
+    saveState(); updateProgress(); applyRowPerf(day); updateSummary();
+  };
+  if (day < currentRamadanDay) askConfirm(`أحزاب يوم ${day}`, doIt);
+  else doIt();
+}
+
+// ===== PROGRESS =====
+function updateProgress() {
+  let tp=0, tt=0, th=0;
+  for(let d=1;d<=30;d++){
+    const dd=getDay(d);
+    tp += PRAYERS.filter(p => dd.prayers[p] > 0).length;
+    tt+=dd.tarawih; th+=dd.hizb;
+  }
+  const maxH = state.khatma * 60;
+  const pp = Math.min(100,(tp/150)*100), hp = Math.min(100,(th/maxH)*100);
+  const overall = Math.round((pp+hp)/2);
+  document.getElementById('prog-prayers').textContent = `${tp}/150`;
+  document.getElementById('prog-tarawih').textContent = tt;
+  document.getElementById('prog-hizb').textContent = `${th%1===0?th:th.toFixed(1)}/${maxH}`;
+  document.getElementById('prog-pct').textContent = overall + '%';
+  document.getElementById('main-progress').style.width = overall + '%';
+}
+
+// ===== FULLSCREEN =====
+function toggleFullscreen() {
+  const wrapper = document.getElementById('table-wrapper');
+  wrapper.classList.toggle('fullscreen');
+  if (wrapper.classList.contains('fullscreen')) {
+    document.body.style.overflow = 'hidden';
+    scrollToToday();
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+// ===== DHIKR COUNTER =====
+let dhikrCount = 0;
+function changeDhikrCount(delta) {
+  dhikrCount = Math.max(0, dhikrCount + delta);
+  document.getElementById('dhikr-count').textContent = dhikrCount;
+}
+function resetDhikrCount() {
+  dhikrCount = 0;
+  document.getElementById('dhikr-count').textContent = 0;
+}
+
+// ===== SHARE DHIKR =====
+function shareDhikr() {
+  const d = ADHKAR[dhikrIndex];
+  const text = `📿 ذكر اليوم ${dhikrIndex+1} من رمضان:\n\n"${d.text}"\n\n✨ ${d.fadl}\n\n🌙 مصحف رمضان`;
+  if (navigator.share) {
+    navigator.share({ text }).catch(() => {});
+  } else {
+    copyToClipboard(text);
+    showToast('✅ تم النسخ!', 'success');
+  }
+}
+function copyDhikr() {
+  const d = ADHKAR[dhikrIndex];
+  copyToClipboard(`📿 ${d.text}\n✨ ${d.fadl}`);
+  showToast('✅ تم نسخ الذكر!', 'success');
+}
+function copyToClipboard(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  document.execCommand('copy'); document.body.removeChild(ta);
+}
+
+// ===== CELEBRATE =====
+let lastCelebrated = -1;
+function celebrateDay(d) {
+  if (d !== currentRamadanDay || lastCelebrated === d) return;
+  lastCelebrated = d;
+  const row = document.getElementById(`row-${d}`);
+  if (row) { row.classList.add('celebrate'); setTimeout(() => row.classList.remove('celebrate'), 600); }
+  showToast('🌟 يوم مثالي! بارك الله فيك', 'success');
+  launchConfetti();
+}
+function launchConfetti() {
+  const wrap = document.createElement('div');
+  wrap.className = 'confetti-wrap';
+  const colors = ['#c9a84c','#4ade80','#60a5fa','#f0d080','#a78bfa','#fb7185'];
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    p.style.cssText = `left:${Math.random()*100}%;top:-10px;background:${colors[i%colors.length]};animation-delay:${Math.random()*0.5}s;animation-duration:${1+Math.random()}s;transform:rotate(${Math.random()*360}deg)`;
+    wrap.appendChild(p);
+  }
+  document.body.appendChild(wrap);
+  setTimeout(() => document.body.removeChild(wrap), 2500);
+}
+
+// ===== SCROLL TO TODAY =====
+function scrollToToday() {
+  const row = document.getElementById(`row-${currentRamadanDay}`);
+  if (row) row.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+// ===== THEME =====
+function setTheme(theme, btn) {
+  document.body.setAttribute('data-theme', theme);
+  document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  state.theme = theme;
+  saveState();
+}
+
+// ===== SETTINGS =====
+let settingsKhatma = 1;
+function openSettings() {
+  document.getElementById('s-name').value = state.name;
+  document.getElementById('s-month').value = state.ramadanMonth;
+  document.getElementById('s-day-start').value = state.ramadanStartDay;
+  settingsKhatma = state.khatma;
+  const grid = document.getElementById('s-khatma-grid');
+  const opts = [0.5,1,2,3,4,5];
+  const labels = ['½','١','٢','٣','٤','٥'];
+  grid.innerHTML = opts.map((v,i)=>`<div class="s-kopt ${v===settingsKhatma?'selected':''}" onclick="setSettingsKhatma(${v},this)">${labels[i]} ختمة</div>`).join('');
+  document.getElementById('settings-modal').classList.add('show');
+  updateNotifUI();
+}
+function setSettingsKhatma(v, el) {
+  settingsKhatma = v;
+  document.querySelectorAll('.s-kopt').forEach(e => e.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function closeSettings(save) {
+  document.getElementById('settings-modal').classList.remove('show');
+  if (save) {
+    state.name = document.getElementById('s-name').value.trim() || state.name;
+    state.ramadanMonth = parseInt(document.getElementById('s-month').value) || state.ramadanMonth;
+    state.ramadanStartDay = parseInt(document.getElementById('s-day-start').value) || state.ramadanStartDay;
+    state.khatma = settingsKhatma;
+    saveState();
+    currentRamadanDay = getCurrentRamadanDay();
+    document.getElementById('greeting').textContent = `أهلاً ${state.name} 🤲`;
+    buildTable();
+    updateProgress();
+    showToast('✅ تم حفظ الإعدادات', 'success');
+  }
+}
+
+// ===== EXPORT =====
+function exportCard() {
+  const canvas = document.getElementById('export-canvas');
+  canvas.style.display = 'block';
+  const W = 800, H = 500;
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  const isDark = state.theme === 'night' || state.theme === 'sunset';
+  const bgColor = isDark ? '#0a0e1a' : '#fffbf5';
+  const goldColor = state.theme==='sunset' ? '#fb7185' : state.theme==='classic' ? '#1a5c1a' : state.theme==='daylight' ? '#c2710c' : '#c9a84c';
+  const textColor = isDark ? '#e8dcc8' : '#2c1810';
+  const subtextColor = isDark ? '#8a7a60' : '#8a6050';
+
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, W, H);
+
+  // Decorative border
+  ctx.strokeStyle = goldColor;
+  ctx.lineWidth = 3;
+  ctx.strokeRect(15, 15, W-30, H-30);
+  ctx.lineWidth = 1;
+  ctx.globalAlpha = 0.4;
+  ctx.strokeRect(22, 22, W-44, H-44);
+  ctx.globalAlpha = 1;
+
+  // Title
+  ctx.fillStyle = goldColor;
+  ctx.font = 'bold 36px serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('شهادة إنجاز رمضان', W/2, 75);
+
+  ctx.fillStyle = subtextColor;
+  ctx.font = '18px sans-serif';
+  ctx.fillText(state.name, W/2, 108);
+
+  // Stats
+  let tp=0, tt=0, th=0, perfectDays=0;
+  const dailyHizb = state.khatma * 2;
+  for(let d=1;d<=30;d++){
+    const dd=getDay(d);
+    const pc=PRAYERS.filter(p=>dd.prayers[p]).length;
+    tp+=pc; tt+=dd.tarawih; th+=dd.hizb;
+    const score=pc+(dd.hizb>=dailyHizb?2:0)+(dd.tarawih>=8?1:0);
+    if(score>=7) perfectDays++;
+  }
+
+  const stats = [
+    { label: 'صلوات المسجد', value: `${tp}/150`, icon: '🕌' },
+    { label: 'ركعات التراويح', value: String(tt), icon: '🌙' },
+    { label: 'أحزاب القرآن', value: `${th%1===0?th:th.toFixed(1)}/${state.khatma*60}`, icon: '📖' },
+    { label: 'أيام مثالية', value: String(perfectDays), icon: '⭐' },
+  ];
+
+  const boxW = 160, boxH = 100, startX = (W - (boxW*4 + 30*3))/2, boxY = 150;
+  stats.forEach((s,i) => {
+    const x = startX + i * (boxW+30);
+    ctx.fillStyle = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)';
+    roundRect(ctx, x, boxY, boxW, boxH, 12);
+    ctx.fill();
+    ctx.strokeStyle = goldColor + '44';
+    ctx.lineWidth = 1;
+    roundRect(ctx, x, boxY, boxW, boxH, 12);
+    ctx.stroke();
+    ctx.fillStyle = textColor;
+    ctx.font = 'bold 28px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(s.icon, x+boxW/2, boxY+36);
+    ctx.fillStyle = goldColor;
+    ctx.font = 'bold 22px sans-serif';
+    ctx.fillText(s.value, x+boxW/2, boxY+68);
+    ctx.fillStyle = subtextColor;
+    ctx.font = '13px sans-serif';
+    ctx.fillText(s.label, x+boxW/2, boxY+88);
+  });
+
+  // Progress bar
+  const barY = 290, barH = 14, barX = 80, barW = W-160;
+  const prayerPct = Math.min(1, tp/150);
+  const hizbPct = Math.min(1, th/(state.khatma*60));
+  const overall = (prayerPct + hizbPct) / 2;
+
+  ctx.fillStyle = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
+  roundRect(ctx, barX, barY, barW, barH, 7); ctx.fill();
+  const grad = ctx.createLinearGradient(barX, 0, barX+barW, 0);
+  grad.addColorStop(0, goldColor);
+  grad.addColorStop(1, isDark ? '#f0d080' : goldColor);
+  ctx.fillStyle = grad;
+  roundRect(ctx, barX, barY, barW * overall, barH, 7); ctx.fill();
+
+  ctx.fillStyle = textColor;
+  ctx.font = 'bold 16px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(`نسبة الإنجاز: ${Math.round(overall*100)}%`, W/2, barY + 38);
+
+  // Motivational quote
+  ctx.fillStyle = subtextColor;
+  ctx.font = '15px serif';
+  ctx.fillText('رمضان كريم — بارك الله في جهودك وتقبّل منك صالح الأعمال', W/2, H - 60);
+  ctx.font = '13px sans-serif';
+  ctx.fillText('مصحف رمضان 🌙', W/2, H - 35);
+
+  canvas.style.display = 'none';
+
+  // Download
+  const link = document.createElement('a');
+  link.download = `ramadan-${state.name}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+  showToast('✅ تم تصدير البطاقة!', 'success');
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.lineTo(x+w-r, y);
+  ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+  ctx.lineTo(x+w, y+h-r);
+  ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+  ctx.lineTo(x+r, y+h);
+  ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+  ctx.lineTo(x, y+r);
+  ctx.quadraticCurveTo(x, y, x+r, y);
+  ctx.closePath();
+}
+
+// ===== TOAST =====
+let toastTimer;
+function showToast(msg, type='') {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = `toast ${type} show`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ===== TUTORIAL =====
+function showTutorial() {
+  document.getElementById('tutorial-overlay').style.display = 'flex';
+}
+function closeTutorial() {
+  document.getElementById('tutorial-overlay').style.display = 'none';
+  localStorage.setItem('ramadan_tutorial_seen', '1');
+}
+
+// ===== PWA SERVICE WORKER =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => {
+        console.log('SW registered');
+        // إعادة جدولة الإشعار إذا كان مفعلاً
+        const savedTime = localStorage.getItem('ramadan_notif_time');
+        if (savedTime && Notification.permission === 'granted') {
+          const [h, m] = savedTime.split(':');
+          reg.active && reg.active.postMessage({ type: 'SCHEDULE_NOTIFICATION', hour: +h, minute: +m });
+        }
+      })
+      .catch(err => console.log('SW error:', err));
+  });
+}
+
+// ===== NOTIFICATIONS =====
+let notifEnabled = false;
+
+function updateNotifUI() {
+  const btn = document.getElementById('s-notif-btn');
+  const status = document.getElementById('notif-status');
+  const savedTime = localStorage.getItem('ramadan_notif_time');
+  if (!btn) return;
+  if (Notification.permission === 'granted' && savedTime) {
+    notifEnabled = true;
+    btn.textContent = 'إيقاف 🔕';
+    btn.style.color = 'var(--red)';
+    btn.style.borderColor = 'var(--red)';
+    if (status) status.textContent = `✅ التذكير مفعّل يومياً الساعة ${savedTime}`;
+    const input = document.getElementById('s-notif-time');
+    if (input) input.value = savedTime;
+  } else if (Notification.permission === 'denied') {
+    btn.textContent = 'محجوب 🚫';
+    btn.style.color = 'var(--text2)';
+    if (status) status.textContent = '⚠️ الإشعارات محجوبة، فعّلها من إعدادات المتصفح';
+  } else {
+    notifEnabled = false;
+    btn.textContent = 'تفعيل 🔔';
+    btn.style.color = 'var(--text2)';
+    btn.style.borderColor = 'var(--border)';
+    if (status) status.textContent = '';
+  }
+}
+
+async function toggleNotification() {
+  const savedTime = localStorage.getItem('ramadan_notif_time');
+  // إذا كان مفعلاً → أوقفه
+  if (notifEnabled && savedTime) {
+    localStorage.removeItem('ramadan_notif_time');
+    notifEnabled = false;
+    updateNotifUI();
+    showToast('🔕 تم إيقاف التذكير', '');
+    return;
+  }
+  // تفعيل
+  if (!('Notification' in window)) {
+    showToast('⚠️ متصفحك لا يدعم الإشعارات', 'warn');
+    return;
+  }
+  const timeInput = document.getElementById('s-notif-time');
+  const time = timeInput ? timeInput.value : '21:00';
+  let permission = Notification.permission;
+  if (permission === 'default') {
+    permission = await Notification.requestPermission();
+  }
+  if (permission === 'granted') {
+    localStorage.setItem('ramadan_notif_time', time);
+    notifEnabled = true;
+    // أرسل للـ service worker لجدولة الإشعار
+    if ('serviceWorker' in navigator) {
+      const reg = await navigator.serviceWorker.ready;
+      const [h, m] = time.split(':');
+      reg.active && reg.active.postMessage({ type: 'SCHEDULE_NOTIFICATION', hour: +h, minute: +m });
+    }
+    updateNotifUI();
+    showToast(`✅ سيتذكرك التطبيق يومياً الساعة ${time}`, 'success');
+    // اختبار فوري
+    setTimeout(() => {
+      new Notification('مصحف رمضان 🌙', {
+        body: 'تم تفعيل التذكير اليومي بنجاح! ✅',
+        icon: './icon-192.png',
+        dir: 'rtl'
+      });
+    }, 1500);
+  } else if (permission === 'denied') {
+    updateNotifUI();
+    showToast('⚠️ الإشعارات محجوبة من إعدادات المتصفح', 'warn');
+  }
+}
+
+// ===== PWA INSTALL =====
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallButtons();
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  hideInstallButtons();
+  showToast('✅ تم تثبيت التطبيق على شاشتك!', 'success');
+});
+
+function showInstallButtons() {
+  ['welcome','settings'].forEach(id => {
+    const btn = document.getElementById(`install-btn-${id}`);
+    const note = document.getElementById(`install-note-${id}`);
+    if (btn) btn.classList.remove('hidden');
+    if (note) note.classList.remove('hidden');
+  });
+}
+
+function hideInstallButtons() {
+  ['welcome','settings'].forEach(id => {
+    const btn = document.getElementById(`install-btn-${id}`);
+    const note = document.getElementById(`install-note-${id}`);
+    if (btn) btn.classList.add('hidden');
+    if (note) note.classList.add('hidden');
+  });
+}
+
+function showIOSInstallNote() {
+  const msg = 'لتثبيت التطبيق على iPhone: اضغط زر المشاركة ثم "إضافة إلى الشاشة الرئيسية"';
+  ['welcome','settings'].forEach(id => {
+    const note = document.getElementById(`install-note-${id}`);
+    if (note) { note.textContent = '📱 ' + msg; note.classList.remove('hidden'); }
+  });
+}
+
+async function installApp() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      deferredPrompt = null;
+      hideInstallButtons();
+    }
+  }
+}
+
+// Detect iOS (no beforeinstallprompt support)
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+if (isIOS && !isInStandaloneMode) {
+  showIOSInstallNote();
+}
+
+// ===== INIT =====
+if (loadState()) {
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  // Apply theme
+  document.body.setAttribute('data-theme', state.theme || 'night');
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    const map = { night:'🌙', classic:'🕌', daylight:'☀️', sunset:'🌅' };
+    btn.classList.toggle('active', btn.textContent === map[state.theme || 'night']);
+  });
+  buildApp();
+}
+</script>
+</body>
+</html>
