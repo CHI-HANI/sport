@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- TV standalone: force browser-like display on large screens -->
+<style>
+  @media (min-width: 960px) and (display-mode: standalone) {
+    html, body { width: 100vw !important; height: 100vh !important; overflow: auto !important; }
+    /* In TV standalone, force TV mode layout (same as browser) */
+  }
+</style>
 <title>رمضان فيت 4.0</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#07090F">
@@ -547,9 +554,13 @@ body{font-family:'Cairo',sans-serif;background:var(--night);color:var(--text)}
   <span class="moon">🌙</span>
   <div class="title">رمضان فيت 4.0</div>
   <div class="sub">الحرق الأقصى · 74 كغ · 177 سم · قبل المغرب</div>
-  <button id="installBtn" onclick="triggerInstall()" style="display:none;margin-top:8px;padding:7px 18px;background:linear-gradient(135deg,var(--gold),var(--gd));border:none;border-radius:20px;font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;color:var(--night);cursor:pointer;animation:pulse 2s ease-in-out infinite">
-    📲 أضف للشاشة الرئيسية
-  </button>
+  <!-- Install Banner — shown when PWA not installed -->
+  <div id="installBanner" style="display:none;margin-top:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(212,168,67,.15),rgba(212,168,67,.06));border:1.5px solid rgba(212,168,67,.35);border-radius:14px;width:100%">
+    <div style="font-size:11px;color:var(--dim);margin-bottom:7px;text-align:center">🚀 ثبّت التطبيق للوصول السريع — يعمل بدون نت!</div>
+    <button id="installBtn" onclick="triggerInstall()" style="width:100%;padding:10px;background:linear-gradient(135deg,var(--gold),var(--gd));border:none;border-radius:10px;font-family:'Cairo',sans-serif;font-size:13px;font-weight:900;color:var(--night);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 16px rgba(212,168,67,.35);animation:pulse 2.5s ease-in-out infinite">
+      📲 أضف للشاشة الرئيسية
+    </button>
+  </div>
 </div>
 
 <div class="maghrib-banner">
@@ -826,9 +837,13 @@ body{font-family:'Cairo',sans-serif;background:var(--night);color:var(--text)}
       <div id="tvPhaseLabel" class="tv-phase-label">اختر تمريناً</div>
     </div>
     <div class="tv-day-info">
-      <div style="display:flex;align-items:center;gap:6px">
+      <div style="display:flex;align-items:center;gap:8px">
         <span id="tvConnDot" title="جاري الفحص..." style="font-size:10px">⚪</span>
         <span style="font-size:13px;color:var(--dim)">⏰ المغرب بعد</span>
+        <!-- TV Install Button -->
+        <button id="tvInstallBtn" onclick="triggerInstall()" style="display:none;padding:5px 12px;background:linear-gradient(135deg,var(--gold),var(--gd));border:none;border-radius:8px;font-family:'Cairo',sans-serif;font-size:11px;font-weight:900;color:var(--night);cursor:pointer;animation:pulse 2.5s ease-in-out infinite" title="تثبيت التطبيق">
+          📲 تثبيت
+        </button>
       </div>
       <div id="tvMaghrib" class="tv-maghrib">--:--:--</div>
     </div>
@@ -865,13 +880,11 @@ body{font-family:'Cairo',sans-serif;background:var(--night);color:var(--text)}
   <div class="tv-hint">
     <div class="tv-hint-item"><span class="tv-key">↑↓←→</span> تنقل</div>
     <div class="tv-hint-item"><span class="tv-key">OK</span> تأكيد / بدء</div>
-    <div class="tv-hint-item"><span class="tv-key">⏮⏭</span> تمرين سابق/تالي</div>
     <div class="tv-hint-item"><span class="tv-key">⏯</span> إيقاف مؤقت</div>
     <div class="tv-hint-item"><span class="tv-key">🔴</span> إيقاف وصفر</div>
-    <div class="tv-hint-item"><span class="tv-key">🟢</span> بدء جلسة موجّهة</div>
-    <div class="tv-hint-item"><span class="tv-key">🔵</span> اليوم التالي</div>
-    <div class="tv-hint-item"><span class="tv-key">🟡</span> اليوم السابق</div>
-    <div class="tv-hint-item"><span class="tv-key">Back</span> رجوع</div>
+    <div class="tv-hint-item"><span class="tv-key">🟢</span> جلسة موجّهة</div>
+    <div class="tv-hint-item"><span class="tv-key">🔵🟡</span> يوم ±</div>
+    <div class="tv-hint-item"><span class="tv-key">1</span>🌙 <span class="tv-key">2</span>🔥 <span class="tv-key">3</span>🌊 <span class="tv-key">4</span>🌿 <span class="tv-key">5</span>⚡ <span class="tv-key">6</span>💜</div>
   </div>
 </div>
 
@@ -2591,7 +2604,9 @@ function detectTV(){
   // Also detect Android TV user agent
   const ua = navigator.userAgent || '';
   const isAndroidTV = /Android.*TV|TV.*Android|SmartTV|Tizen|webOS/i.test(ua);
-  return isTV || isAndroidTV;
+  // Also detect standalone mode on large screens (installed PWA on TV)
+  const isStandaloneLarge = window.matchMedia('(display-mode: standalone)').matches && window.innerWidth >= 960;
+  return isTV || isAndroidTV || isStandaloneLarge;
 }
 
 function initTV(){
@@ -2973,6 +2988,15 @@ function handleTVKey(e){
   else if(key==='ColorF3Blue' || key==='Blue' || key===406){
     e.preventDefault(); navDay(1); tvRenderSidebar(); tvRenderDays();
   }
+
+  // Number keys 1-6: Theme switching (TV remote & keyboard)
+  else if(key==='1' || key===49){ e.preventDefault(); setTheme('default'); }
+  else if(key==='2' || key===50){ e.preventDefault(); setTheme('fire'); }
+  else if(key==='3' || key===51){ e.preventDefault(); setTheme('ocean'); }
+  else if(key==='4' || key===52){ e.preventDefault(); setTheme('nature'); }
+  else if(key==='5' || key===53){ e.preventDefault(); setTheme('neon'); }
+  else if(key==='6' || key===54){ e.preventDefault(); setTheme('purple'); }
+  else if(key==='7' || key===55){ e.preventDefault(); setTheme('light'); }
 }
 
 /* ---- Keys inside guided mode ---- */
@@ -3036,14 +3060,20 @@ window.addEventListener('load', init);
   window.addEventListener('beforeinstallprompt', e => {
     e.preventDefault();
     deferredPrompt = e;
-    const btn = document.getElementById('installBtn');
-    if(btn) btn.style.display = 'inline-block';
+    // Show install banner on mobile
+    const banner = document.getElementById('installBanner');
+    if(banner) banner.style.display = 'block';
+    // Show TV install button
+    const tvBtn = document.getElementById('tvInstallBtn');
+    if(tvBtn) tvBtn.style.display = 'inline-block';
   });
 
   window.addEventListener('appinstalled', () => {
     deferredPrompt = null;
-    const btn = document.getElementById('installBtn');
-    if(btn) btn.style.display = 'none';
+    const banner = document.getElementById('installBanner');
+    if(banner) banner.style.display = 'none';
+    const tvBtn = document.getElementById('tvInstallBtn');
+    if(tvBtn) tvBtn.style.display = 'none';
     showBanner('🎉 تم التثبيت! افتح التطبيق من الشاشة الرئيسية', '#07090F', '#1DB954', 4000);
     if(typeof gtag !== 'undefined') gtag('event', 'pwa_installed');
   });
@@ -3051,21 +3081,30 @@ window.addEventListener('load', init);
   window.triggerInstall = async function(){
     if(!deferredPrompt){
       // iOS or already installed — show manual instructions
-      showBanner('iPhone: اضغط ⬆️ Share ثم "Add to Home Screen"', '#EDE8DA', 'rgba(212,168,67,.2)', 6000);
+      const isTV = window.innerWidth >= 960;
+      if(isTV){
+        showBanner('Chrome TV: اضغط ⋮ ثم "Add to Home screen" أو "Install app"', '#EDE8DA', 'rgba(212,168,67,.25)', 8000);
+      } else {
+        showBanner('iPhone: اضغط ⬆️ Share ثم "Add to Home Screen" — Android: اضغط ⋮ ثم Install', '#EDE8DA', 'rgba(212,168,67,.2)', 7000);
+      }
       return;
     }
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
     deferredPrompt = null;
-    const btn = document.getElementById('installBtn');
-    if(btn) btn.style.display = 'none';
+    const banner2 = document.getElementById('installBanner');
+    if(banner2) banner2.style.display = 'none';
+    const tvBtn2 = document.getElementById('tvInstallBtn');
+    if(tvBtn2) tvBtn2.style.display = 'none';
     if(typeof gtag !== 'undefined') gtag('event', 'pwa_install_prompt', { outcome });
   };
 
-  // If already installed as PWA — hide button
+  // If already installed as PWA — hide install UI
   if(window.matchMedia('(display-mode: standalone)').matches){
-    const btn = document.getElementById('installBtn');
-    if(btn) btn.style.display = 'none';
+    const banner = document.getElementById('installBanner');
+    if(banner) banner.style.display = 'none';
+    const tvBtn = document.getElementById('tvInstallBtn');
+    if(tvBtn) tvBtn.style.display = 'none';
   }
 
   // Register Service Worker
