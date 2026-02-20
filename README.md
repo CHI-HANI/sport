@@ -31,7 +31,7 @@
 
 **5. افتح التطبيق بعد دقيقتين:**
 ```
-https://USERNAME.github.io/ramadan-fit
+https://chi-hani.github.io/sport/
 ```
 
 ---
